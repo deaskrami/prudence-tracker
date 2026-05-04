@@ -1,4 +1,4 @@
-## Scope
+## Scope of the project
 
 Prudence tracks self-development. The anxiety that characterizes modern life has made people become mentally scattered which substantially affects their wellbeing and quality of life. The database is built with the intent to cultivate organization, discipline and structure through self-assigned tasks by the user's choice, preferences and/or hobbies. Often we cannot find time anymore to pursue our interests and that of course leaves us upset and at the hands of our electronic devices which only exacerbate our mental health. The design is simple in order not to cause overwhelm: each month you will set 4 categories of tasks of your choice that you aim to carry out throughout that month by choosing the frequency of each of those tasks and the days to do them. To make this fun and engaging for the user, the progress measured through percentage ranges has 5 gradient shades of purple attributed to each respective range. The user can unlock the last shade since the first month or it can gradually arrive there. That is not the point though; Prudence works with the idea that it takes 30 days to create a habit.
 
@@ -105,7 +105,6 @@ Represents: Each percentage range is attributed to one of the five shades of pur
 
 
 ### Relationships
-![ER DIAGRAM](diagramprudence.png)
 
 The diagram represents four entities: `category`, `tasks`, `task_progress` and `color_attribution`. Firstly you choose 4 categories of tasks/activities you decide to achieve and focus on for said month. After choosing the categories, you choose the tasks, hence each category has a list of tasks which are placed throughout the month in accordance with your objectives and plans. Each task that you do is counted in your task progress entity. All tasks amount to 100% by the end of the month. `task_progress` is an entity that is measured in percentage and is represented visually by 5 shades of color purple. Each of these 5 shades are attributed to a percentage range amounting to 25% each. The `color_attribution` entity is a range lookup table connected via query time through the `BETWEEN` clause.
 
