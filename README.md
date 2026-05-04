@@ -35,10 +35,8 @@ A user cannot:
 
 1. Share progress via social media.
 2. Add notes, stickers, reminders, etc.
-3. Set an alarm to carry out the task.
-4. Track by daily streaks.
-5. Postpone the task/s to the next month.
-6. Mark certain tasks with higher priority than the rest.
+3. Track by daily streaks.
+4. Postpone the task/s to the next month.
 
 ## Representation
 
