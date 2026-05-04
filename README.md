@@ -104,17 +104,6 @@ Represents: Each percentage range is attributed to one of the five shades of pur
 **Relationships:** Related to `task_progress` at query time via `BETWEEN min_percentage AND max_percentage`.
 
 
-### Relationships
-
-The diagram represents four entities: `category`, `tasks`, `task_progress` and `color_attribution`. Firstly you choose 4 categories of tasks/activities you decide to achieve and focus on for said month. After choosing the categories, you choose the tasks, hence each category has a list of tasks which are placed throughout the month in accordance with your objectives and plans. Each task that you do is counted in your task progress entity. All tasks amount to 100% by the end of the month. `task_progress` is an entity that is measured in percentage and is represented visually by 5 shades of color purple. Each of these 5 shades are attributed to a percentage range amounting to 25% each. The `color_attribution` entity is a range lookup table connected via query time through the `BETWEEN` clause.
-
-`category` to `tasks` represents a one-to-many relationship meaning that a category can have at least one task but they can have many tasks as well. A task can only be part of one category. The `category_id` foreign key in the `tasks` table referencing `category(id)` enforces this relationship.
-
-`tasks` to `task_progress` represents a one-to-many relationship. This means that the one task or the many tasks that you write on the tracker has/have their respective progress. On the other hand, a task progress is solely related to one or one of the many tasks. For this reason we have the `task_id` foreign key referencing `tasks(id)`. In this relationship we have used the `ON DELETE CASCADE` clause so when deleting a task, all its log entries are automatically deleted as well.
-
-The last relationship is `task_progress` to `color_attribution` which is a different type of relationship because of the fact that `color_attribution` is a lookup table connected via query time through the `BETWEEN` clause. For this reason we have no foreign key present and the relationship has a dashed line in the ER diagram.
-
-
 ## Optimizations
 I created the following indexes:
 
